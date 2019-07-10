@@ -27,15 +27,15 @@ public class Main {
         }
         fileReader.close();
 
-        Collections.sort(list, (o1, o2) -> o1.getString().compareTo(o2.getString()));//сортировка по строкам
+        Collections.sort(list, (o1, o2) -> o1.getString().compareTo(o2.getString()));//СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СЃС‚СЂРѕРєР°Рј
 
         for(MyClass myClass : list){
-            System.out.println(myClass);//Вывод отсортированного списка
+            System.out.println(myClass);//Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР°
         }
-        System.out.println("Максимальное кол-во повторений: ");
-        int max = list.stream().mapToInt(MyClass::getCount).max().getAsInt();//нахождение максимального кол-во повторений слова
+        System.out.println("РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№: ");
+        int max = list.stream().mapToInt(MyClass::getCount).max().getAsInt();//РЅР°С…РѕР¶РґРµРЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ РєРѕР»-РІРѕ РїРѕРІС‚РѕСЂРµРЅРёР№ СЃР»РѕРІР°
 
-        System.out.println(list.stream().filter(s-> s.getCount() == max).collect(toList())); //вывод слов с максимальным кол-вом повторений
+        System.out.println(list.stream().filter(s-> s.getCount() == max).collect(toList())); //РІС‹РІРѕРґ СЃР»РѕРІ СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј РєРѕР»-РІРѕРј РїРѕРІС‚РѕСЂРµРЅРёР№
     }
 
 }

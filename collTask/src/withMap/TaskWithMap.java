@@ -11,7 +11,7 @@ public class TaskWithMap {
     public static void main(String[] args) throws IOException {
         System.out.println("File: ");
         BufferedReader fileReader = new BufferedReader(new FileReader(new BufferedReader(new InputStreamReader(System.in)).readLine()));
-        TreeMap<String, Integer> map = new TreeMap<>();//TreeMap автоматически упорядочит по ключам String в алфавитном порядке
+        TreeMap<String, Integer> map = new TreeMap<>();//TreeMap Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СѓРїРѕСЂСЏРґРѕС‡РёС‚ РїРѕ РєР»СЋС‡Р°Рј String РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ
         while (fileReader.ready()){
             String[] words = fileReader.readLine().split("\\s+");
             for(String word : words){
@@ -20,11 +20,11 @@ public class TaskWithMap {
             }
         }
         fileReader.close();
-        System.out.println("Статистика: ");
-        printMap(map);//Вывод в консоль
-        System.out.println("Слова с максимальным кол-вом повторений:");
+        System.out.println("РЎС‚Р°С‚РёСЃС‚РёРєР°: ");
+        printMap(map);//Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ
+        System.out.println("РЎР»РѕРІР° СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј РєРѕР»-РІРѕРј РїРѕРІС‚РѕСЂРµРЅРёР№:");
         int max = 0;
-        TreeMap<String, Integer> mapMax = new TreeMap<>();//Если слов с максимальным кол-вом повторений несколько
+        TreeMap<String, Integer> mapMax = new TreeMap<>();//Р•СЃР»Рё СЃР»РѕРІ СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј РєРѕР»-РІРѕРј РїРѕРІС‚РѕСЂРµРЅРёР№ РЅРµСЃРєРѕР»СЊРєРѕ
         for(Map.Entry<String, Integer> pair : map.entrySet()){
             if(pair.getValue() >= max){
                 if(pair.getValue() > max) {
@@ -34,21 +34,21 @@ public class TaskWithMap {
                 mapMax.put(pair.getKey(), pair.getValue());
             }
         }
-        printMap(mapMax);//Вывод в консоль
+        printMap(mapMax);//Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ
     }
 
-    private static void printMap(Map<String, Integer> map){//для вывода в консоль
+    private static void printMap(Map<String, Integer> map){//РґР»СЏ РІС‹РІРѕРґР° РІ РєРѕРЅСЃРѕР»СЊ
         for(Map.Entry<String, Integer> pair : map.entrySet()){
             System.out.println(pair.getKey() + " count: " + pair.getValue());
         }
     }
 }
-/*Есть входной файл с набором слов, написанных через пробел
-Необходимо:
-Прочитать слова из файла.
-Отсортировать в алфавитном порядке.
-Посчитать сколько раз каждое слово встречается в файле.
-Вывести статистику на консоль
-Найти слово с максимальным количеством повторений.
-Вывести на консоль это слово и сколько раз оно встречается в
-файле*/
+/*Р•СЃС‚СЊ РІС…РѕРґРЅРѕР№ С„Р°Р№Р» СЃ РЅР°Р±РѕСЂРѕРј СЃР»РѕРІ, РЅР°РїРёСЃР°РЅРЅС‹С… С‡РµСЂРµР· РїСЂРѕР±РµР»
+РќРµРѕР±С…РѕРґРёРјРѕ:
+РџСЂРѕС‡РёС‚Р°С‚СЊ СЃР»РѕРІР° РёР· С„Р°Р№Р»Р°.
+РћС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ.
+РџРѕСЃС‡РёС‚Р°С‚СЊ СЃРєРѕР»СЊРєРѕ СЂР°Р· РєР°Р¶РґРѕРµ СЃР»РѕРІРѕ РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ РІ С„Р°Р№Р»Рµ.
+Р’С‹РІРµСЃС‚Рё СЃС‚Р°С‚РёСЃС‚РёРєСѓ РЅР° РєРѕРЅСЃРѕР»СЊ
+РќР°Р№С‚Рё СЃР»РѕРІРѕ СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј РїРѕРІС‚РѕСЂРµРЅРёР№.
+Р’С‹РІРµСЃС‚Рё РЅР° РєРѕРЅСЃРѕР»СЊ СЌС‚Рѕ СЃР»РѕРІРѕ Рё СЃРєРѕР»СЊРєРѕ СЂР°Р· РѕРЅРѕ РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ РІ
+С„Р°Р№Р»Рµ*/
